@@ -6,6 +6,10 @@ Aka. switches loader for image between `file` and `dataurl` depending on size (a
 
 ## Usage
 
+```sh
+yarn add esbuild-plugin-inline-image
+```
+
 Add it to your `esbuild` plugins list:
 
 ```js
