@@ -1,0 +1,17 @@
+{
+  "name": "esbuild-plugin-inline-image",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "https://github.com/natrim/esbuild-plugin-inline-image.git",
+  "license": "MIT",
+  "author": "Natrim",
+  "keywords": [
+    "esbuild",
+    "plugin",
+    "image",
+    "inline"
+  ],
+  "devDependencies": {
+    "esbuild": "^0.13.15"
+  }
+}
