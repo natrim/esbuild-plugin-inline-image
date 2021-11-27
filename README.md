@@ -39,7 +39,7 @@ import logo from "../assets/logo.png";
 
 ## Options
 
-By default it works for `.jpg, .png, .gif, .svg, .webp` extensions.
+By default it works for `.jpg, .png, .gif, .svg, .webp, .avif` extensions.
 
 You can customize the options (ie. to disable svg loading if being handled by different plugin)
 
@@ -54,7 +54,7 @@ inlineImage({
 
   - limit can also be set from env as `IMAGE_INLINE_SIZE_LIMIT`
 
-- `extensions`: an array of extensions to work on (default is `[` `"jpg"`, `"png"`, `"gif"`, `"svg"`, `"webp"` `]`)
+- `extensions`: an array of extensions to work on (default is `[` `"jpg"`, `"png"`, `"gif"`, `"svg"`, `"webp"`, `"avif"` `]`)
 - `filter`: you can also pass filter for onLoad directly, but in this case you need to manually set `esbuild` `loader` option for the extensions to `file`
 
 ## License

@@ -15,6 +15,7 @@ module.exports = (options = {}) => ({
       "jpg",
       "gif",
       "webp",
+      "avif",
     ];
     const filter =
       options.filter ||
