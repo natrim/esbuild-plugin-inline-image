@@ -10,7 +10,7 @@ yarn add esbuild-plugin-inline-image
 ```
 or
 ```sh
-npm add esbuild-plugin-inline-image
+npm install esbuild-plugin-inline-image
 ```
 
 ## Usage
