@@ -19,7 +19,7 @@ module.exports = (options = {}) => ({
     ];
     const filter =
       options.filter ||
-      new RegExp(`.(${extensions.map((x) => escapeRegExp(x)).join("|")})$`);
+      new RegExp(`\\.(${extensions.map((x) => escapeRegExp(x)).join("|")})$`);
     build.onLoad({ filter }, async (args) => {
       let contents;
       let loader = "file";
