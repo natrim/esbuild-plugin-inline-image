@@ -36,8 +36,10 @@ module.exports = (options = {}) => ({
               .join("|")})$`
           )
         : null;
+    const namespace =
+      typeof options.namespace === "string" ? options.namespace : undefined;
     if (limit && filter) {
-      build.onLoad({ filter }, async (args) => {
+      build.onLoad({ filter, namespace }, async (args) => {
         let contents;
         let loader = "file";
         if (typeof limit === "function") {
