@@ -66,6 +66,79 @@ inlineImage({
 
 - `namespace`: custom namespace for the plugin to operate on, default's to built-in `file`
 
+## Extras
+
+Use plugin multiple times to have different size for different extensions
+
+```js
+esbuild.build({
+  ...
+  plugins: [
+    ...
+    inlineImage({
+      extensions: ["svg", "webp", "avif"]
+    }),
+    inlineImage({
+      limit: 5000,
+      extensions: ["jpg", "jpeg", "gif"]
+    }),
+    inlineImage({
+      limit: 2000,
+      extensions: ["png"]
+    })
+  ]
+  ...
+});
+```
+
+Use function to decide inlining
+
+```js
+esbuild.build({
+  ...
+  plugins: [
+    ...
+    inlineImage({
+      limit: ({ path }) => {
+        // inline only svg, other extensions get only loader set to file
+        return path.endsWith(".svg");
+      }
+    }),
+  ]
+  ...
+});
+```
+
+Use function to inline all images
+
+```js
+esbuild.build({
+  ...
+  plugins: [
+    ...
+    inlineImage({
+      limit: () => true
+    })
+  ]
+  ...
+});
+```
+
+Set limit to 0, to disable inlining (extensions will only get registed to `loader`)
+
+```js
+esbuild.build({
+  ...
+  plugins: [
+    ...
+    inlineImage({
+      limit: 0
+    })
+  ]
+  ...
+});
+```
+
 ## License
 
 Licensed as MIT open source.
