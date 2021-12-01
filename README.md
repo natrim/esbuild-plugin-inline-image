@@ -4,6 +4,8 @@
 
 Aka. switches loader for image between `file` and `dataurl` depending on size (as in Webpack)
 
+*Well, technically can be used even for non images (just set the right extensions), but who would want that?*
+
 ## Instalation
 
 ```sh
