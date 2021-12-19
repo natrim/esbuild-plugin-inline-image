@@ -17,6 +17,8 @@ module.exports = (options = {}) => {
         typeof options.limit === "string" || typeof options.limit === "number"
           ? options.limit === 0 || options.limit === ""
             ? 0
+            : options.limit === -1 || options.limit === "-1"
+            ? -1
             : parseInt(options.limit, 10) ||
               parseInt(process.env.IMAGE_INLINE_SIZE_LIMIT || defLimit, 10) ||
               parseInt(defLimit, 10)
@@ -48,7 +50,10 @@ module.exports = (options = {}) => {
         build.onLoad({ filter, namespace }, async (args) => {
           let contents;
           let loader = "file";
-          if (typeof limit === "function") {
+          if (limit === -1) {
+            contents = await readFile(args.path);
+            loader = "dataurl";
+          } else if (typeof limit === "function") {
             const r = limit(args);
             if (
               (typeof r === "object" && r instanceof Promise && (await r)) ||

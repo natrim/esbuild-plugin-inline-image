@@ -59,6 +59,7 @@ inlineImage({
 - `limit`: define image limit (in bytes) for size after which the image wll not be inline (default is `10000`)
 
   - limit can also be set from env as `IMAGE_INLINE_SIZE_LIMIT`
+  - setting limit to 0 disables inlining, -1 will always inline
   - in case you pass function, the image will be inlined if it returns `true` (or `Promise` that resolves to `true`)
     - the function get's passed `onLoad` [args](https://esbuild.github.io/plugins/#load-arguments)
 
@@ -68,7 +69,7 @@ inlineImage({
 
 - `namespace`: custom namespace for the plugin to operate on, default's to built-in `file`
 
-## Extras
+## Examples
 
 Use plugin multiple times to have different size for different extensions
 
@@ -111,7 +112,7 @@ esbuild.build({
 });
 ```
 
-Use function to inline all images
+Set limit to -1 to inline all images
 
 ```js
 esbuild.build({
@@ -119,7 +120,7 @@ esbuild.build({
   plugins: [
     ...
     inlineImage({
-      limit: () => true
+      limit: -1
     })
   ]
   ...
