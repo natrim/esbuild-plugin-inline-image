@@ -1,4 +1,4 @@
-const { stat, readFile } = require("fs/promises");
+const { stat, readFile } = require("fs").promises;
 const defLimit = "10000";
 function escapeRegExp(string) {
   // $& means the whole matched string
