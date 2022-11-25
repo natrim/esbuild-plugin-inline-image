@@ -75,7 +75,7 @@ module.exports = (options = {}) => {
           };
         });
       }
-      if (extensions.length > 0) {
+      if (options.loaderRegisterExtensions !== false && extensions.length > 0) {
         const esbuildOptions = build.initialOptions;
         if (typeof esbuildOptions.loader !== "object") {
           esbuildOptions.loader = {};

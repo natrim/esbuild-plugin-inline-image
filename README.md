@@ -69,6 +69,8 @@ inlineImage({
 
 - `namespace`: custom namespace for the plugin to operate on, default's to built-in `file`
 
+- `loaderRegisterExtensions`: register `extensions` to esbuild loader? default's to `true`, set `false` to disable
+
 ## Examples
 
 Use plugin multiple times to have different size for different extensions

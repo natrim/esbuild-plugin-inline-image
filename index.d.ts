@@ -5,6 +5,7 @@ type Options = {
   extensions?: string[];
   filter?: RegExp;
   namespace?: string;
+  loaderRegisterExtensions?: boolean;
 };
 
 declare const imageInline: (options?: Options) => Plugin;
