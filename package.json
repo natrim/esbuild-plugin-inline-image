@@ -12,6 +12,6 @@
     "inline"
   ],
   "devDependencies": {
-    "esbuild": "^0.13.15"
+    "esbuild": "*"
   }
 }
